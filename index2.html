@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="dist/css/bootstrap.css" />
+		<script src="dist/js/jquery-1.11.3.min.js"></script>
+		<script src="dist/js/bootstrap.js"></script>
+		<script src="1705-day05素材/oa后台素材/js/Chart.js"></script>
+		<script src="1705-day05素材/oa后台素材/js/script.js"></script>
+		<style>.user-img {
+	width: 50px;
+	border-radius: 50%;
+}
+
+.listSmal {
+	float: right;
+}
+
+.pt20 {
+	padding-top: 20px;
+}
+
+.wh64 {
+	width: 64px;
+	height: 64px;
+	border-radius: 50%;
+}
+
+.mt20 {
+	margin-top: 20px;
+}
+
+li {
+	list-style: none;
+}
+
+.userEdit {
+	border: 1px solid #ccc;
+	width: 50px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	border-radius: 6px;
+}
+
+.userEdit a {
+	text-decoration: none;
+	color: #000;
+}
+</style>
+	</head>
+
+	<body>
+		<!--               -->
+		<nav class="navbar navbar-default" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				      <span class="sr-only">Toggle navigation</span>
+				      <span class="icon-bar"></span>
+				      <span class="icon-bar"></span>
+				      <span class="icon-bar"></span>
+				    </button>
+					<a class="navbar-brand" href="#">OA办公系统</a>
+				</div>
+
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li>
+							<a href="index.html"><span class="glyphicon glyphicon-home">&nbsp;</span>管理首页</a>
+						</li>
+						<li class="active">
+							<a href="#"><span class="glyphicon glyphicon-user">&nbsp;</span>用户管理</a>
+						</li>
+						<li>
+							<a href="index4.html">内容管理</a>
+						</li>
+						<li>
+							<a href="mylist.html">标签管理</a>
+						</li>
+						<li>
+							<a href="myemail.html">我的邮箱</a>
+						</li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li>
+							<img class="user-img" src="1705-day05素材/oa后台素材/images/touxiang.jpg" />
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">管理员 <b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li>
+									<a href="#"><span class="glyphicon glyphicon-screenshot">&nbsp;</span>前台首页</a>
+								</li>
+								<li>
+									<a href="#"><span class="glyphicon glyphicon-user">&nbsp;</span>个人主页</a>
+								</li>
+								<li>
+									<a href="#"><span class="glyphicon glyphicon-cog">&nbsp;</span>个人设置</a>
+								</li>
+								<li>
+									<a href="#"><span class="glyphicon glyphicon-credit-card">&nbsp;</span>账户中心</a>
+								</li>
+								<li>
+									<a href="#"><span class="glyphicon glyphicon-heart">&nbsp;</span>我的收藏</a>
+								</li>
+								<li>
+									<a href="#"><span class="glyphicon glyphicon-off">&nbsp;</span>退出</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-2">
+					<ul class="nav nav-pills nav-stacked">
+						<li class="active">
+							<a href="index2.html">用户管理</a>
+						</li>
+						<li>
+							<a href="index3.html">用户管理</a>
+						</li>
+						<li data-toggle="modal" data-target="#myModal">
+							<a href="index3.html">添加用户</a>
+							<!-- Modal -->
+							<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+							  <div class="modal-dialog" role="document">
+							    <div class="modal-content">
+							      <div class="modal-header">
+							        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							        <h4 class="modal-title" id="myModalLabel">添加用户</h4>
+							      </div>
+							      <div class="modal-body">
+							       		<form>
+									  <div class="form-group">
+									    <label for="exampleInputEmail1">用户名</label>
+									    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="用户名">
+									  </div>
+									  <div class="form-group">
+									    <label for="exampleInputPassword1">用户密码</label>
+									    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="请输入用户密码">
+									  </div>
+									  <div class="form-group">
+									    <label for="exampleInputPassword1">确认用户密码</label>
+									    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="请输入确认用户密码">
+									  </div>
+									  <div class="form-group">
+									    <label for="exampleInputPassword1">请输入用户邮箱</label>
+									    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="请输入用户邮箱">
+									  </div>
+									  <div class="form-group">
+									    <label for="exampleInputPassword1">所属用户组</label>
+									 	<select class="form-control">
+										  <option>限制会员</option>
+										  <option>限制会员</option>
+										  <option>限制会员</option>
+										  <option>限制会员</option>
+										  <option>限制会员</option>
+										</select>
+									  </div>
+									</form>
+							      </div>
+							      <div class="modal-footer">
+							        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+							        <button type="button" class="btn btn-primary">提交</button>
+							      </div>
+							    </div>
+							  </div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="col-md-10">
+					<ul class="nav nav-tabs">
+						<li class="active">
+							<a href="index2.html">用户管理</a>
+						</li>
+						<li>
+							<a href="index3.html">用户管理</a>
+						</li>
+						<li>
+							<a href="#">添加用户</a>
+						</li>
+					</ul>
+					<table class="table">
+					 	<tbody>
+					 			<tr>
+					 				<th>ID</th>
+					 				<th>用户名</th>
+					 				<th>邮箱</th>
+					 				<th>操作</th>
+					 			</tr>
+					 			<tr>
+					 				<td>2</td>
+					 				<td>小星</td>
+					 				<td>12323121313@qq.com</td>
+					 				<td>
+					 					<li class="dropdown userEdit">
+											<a href="#" class="dropdown-toggle" data-toggle="dropdown">操作<b class="caret"></b></a>
+											<ul class="dropdown-menu">
+												<li>
+													<a href="#"><span class="glyphicon glyphicon-screenshot">&nbsp;</span>复制</a>
+												</li>
+												<li>
+													<a href="#"><span class="glyphicon glyphicon-user">&nbsp;</span>编辑</a>
+												</li>
+												<li>
+													<a href="#"><span class="glyphicon glyphicon-cog">&nbsp;</span>删除</a>
+												</li>
+											</ul>
+										</li>
+					 				</td>
+					 			</tr>
+					 			<tr>
+					 				<td>2</td>
+					 				<td>小星</td>
+					 				<td>12323121313@qq.com</td>
+					 				<td>
+					 					<li class="dropdown userEdit">
+											<a href="#" class="dropdown-toggle" data-toggle="dropdown">操作<b class="caret"></b></a>
+											<ul class="dropdown-menu">
+												<li>
+													<a href="#"><span class="glyphicon glyphicon-screenshot">&nbsp;</span>复制</a>
+												</li>
+												<li>
+													<a href="#"><span class="glyphicon glyphicon-user">&nbsp;</span>编辑</a>
+												</li>
+												<li>
+													<a href="#"><span class="glyphicon glyphicon-cog">&nbsp;</span>删除</a>
+												</li>
+											</ul>
+										</li>
+					 				</td>
+					 			</tr>
+					 			<tr>
+					 				<td>2</td>
+					 				<td>小星</td>
+					 				<td>12323121313@qq.com</td>
+					 				<td>
+					 					<li class="dropdown userEdit">
+											<a href="#" class="dropdown-toggle" data-toggle="dropdown">操作<b class="caret"></b></a>
+											<ul class="dropdown-menu">
+												<li>
+													<a href="#"><span class="glyphicon glyphicon-screenshot">&nbsp;</span>复制</a>
+												</li>
+												<li>
+													<a href="#"><span class="glyphicon glyphicon-user">&nbsp;</span>编辑</a>
+												</li>
+												<li>
+													<a href="#"><span class="glyphicon glyphicon-cog">&nbsp;</span>删除</a>
+												</li>
+											</ul>
+										</li>
+					 				</td>
+					 			</tr>
+					 			<tr>
+					 				<td>2</td>
+					 				<td>小星</td>
+					 				<td>12323121313@qq.com</td>
+					 				<td>
+					 					<li class="dropdown userEdit">
+											<a href="#" class="dropdown-toggle" data-toggle="dropdown">操作<b class="caret"></b></a>
+											<ul class="dropdown-menu">
+												<li>
+													<a href="#"><span class="glyphicon glyphicon-screenshot">&nbsp;</span>复制</a>
+												</li>
+												<li>
+													<a href="#"><span class="glyphicon glyphicon-user">&nbsp;</span>编辑</a>
+												</li>
+												<li>
+													<a href="#"><span class="glyphicon glyphicon-cog">&nbsp;</span>删除</a>
+												</li>
+											</ul>
+										</li>
+					 				</td>
+					 			</tr>
+					 			<tr>
+					 				<td>2</td>
+					 				<td>小星</td>
+					 				<td>12323121313@qq.com</td>
+					 				<td>
+					 					<li class="dropdown userEdit">
+											<a href="#" class="dropdown-toggle" data-toggle="dropdown">操作<b class="caret"></b></a>
+											<ul class="dropdown-menu">
+												<li>
+													<a href="#"><span class="glyphicon glyphicon-screenshot">&nbsp;</span>复制</a>
+												</li>
+												<li>
+													<a href="#"><span class="glyphicon glyphicon-user">&nbsp;</span>编辑</a>
+												</li>
+												<li>
+													<a href="#"><span class="glyphicon glyphicon-cog">&nbsp;</span>删除</a>
+												</li>
+											</ul>
+										</li>
+					 				</td>
+					 			</tr>
+					 			<tr>
+					 				<td>2</td>
+					 				<td>小星</td>
+					 				<td>12323121313@qq.com</td>
+					 				<td>
+					 					<li class="dropdown userEdit">
+											<a href="#" class="dropdown-toggle" data-toggle="dropdown">操作<b class="caret"></b></a>
+											<ul class="dropdown-menu">
+												<li>
+													<a href="#"><span class="glyphicon glyphicon-screenshot">&nbsp;</span>复制</a>
+												</li>
+												<li>
+													<a href="#"><span class="glyphicon glyphicon-user">&nbsp;</span>编辑</a>
+												</li>
+												<li>
+													<a href="#"><span class="glyphicon glyphicon-cog">&nbsp;</span>删除</a>
+												</li>
+											</ul>
+										</li>
+					 				</td>
+					 			</tr>
+					 			<tr>
+					 				<td>2</td>
+					 				<td>小星</td>
+					 				<td>12323121313@qq.com</td>
+					 				<td>
+					 					<li class="dropdown userEdit">
+											<a href="#" class="dropdown-toggle" data-toggle="dropdown">操作<b class="caret"></b></a>
+											<ul class="dropdown-menu">
+												<li>
+													<a href="#"><span class="glyphicon glyphicon-screenshot">&nbsp;</span>复制</a>
+												</li>
+												<li>
+													<a href="#"><span class="glyphicon glyphicon-user">&nbsp;</span>编辑</a>
+												</li>
+												<li>
+													<a href="#"><span class="glyphicon glyphicon-cog">&nbsp;</span>删除</a>
+												</li>
+											</ul>
+										</li>
+					 				</td>
+					 			</tr>
+					 			<tr>
+					 				<td>2</td>
+					 				<td>小星</td>
+					 				<td>12323121313@qq.com</td>
+					 				<td>
+					 					<li class="dropdown userEdit">
+											<a href="#" class="dropdown-toggle" data-toggle="dropdown">操作<b class="caret"></b></a>
+											<ul class="dropdown-menu">
+												<li>
+													<a href="#"><span class="glyphicon glyphicon-screenshot">&nbsp;</span>复制</a>
+												</li>
+												<li>
+													<a href="#"><span class="glyphicon glyphicon-user">&nbsp;</span>编辑</a>
+												</li>
+												<li>
+													<a href="#"><span class="glyphicon glyphicon-cog">&nbsp;</span>删除</a>
+												</li>
+											</ul>
+										</li>
+					 				</td>
+					 			</tr>
+					 			
+					 	</tbody>
+					</table>
+					<nav aria-label="Search results pages" class="text-right">
+					  <ul class="pagination">
+					    <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+					    <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+					    <li class="active"><a href="#">2 <span class="sr-only">(current)</span></a></li>
+					    <li class="active"><a href="#">3 <span class="sr-only">(current)</span></a></li>
+					    <li class="active"><a href="#">4 <span class="sr-only">(current)</span></a></li>
+					    <li class="active"><a href="#">5 <span class="sr-only">(current)</span></a></li>
+					    <li class="active"><a href="#">6 <span class="sr-only">(current)</span></a></li>
+					     <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&raquo;</span></a></li>
+					  </ul>
+					</nav>
+				</div>
+
+			</div>
+		</div>
+
+	</body>
+
+</html>
+<script>$(function() {
+
+});</script>
